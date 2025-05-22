@@ -12,15 +12,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Running build for branch: ${BRANCH_NAME}"
-                sh 'mvn clean compile'
+                bat "echo Running build for branch: ${BRANCH_NAME}"
+                bat 'mvn clean compile'
             }
         }
     }
 
     post {
         always {
-            echo "Build stage completed for branch: ${BRANCH_NAME}"
+            bat "echo Build stage completed for branch: ${BRANCH_NAME}"
         }
     }
 }
